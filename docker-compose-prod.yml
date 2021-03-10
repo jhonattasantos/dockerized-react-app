@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+  
+  app:
+    build: 
+      context: ./app
+      dockerfile: Dockerfile-prod
+    container_name: react-app
+    working_dir: /app
+    image: react-app
+    env_file: .env
+    restart: unless-stopped
+    ports:
+      - 80:80
